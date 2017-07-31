@@ -1,0 +1,769 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Column Chart</title>
+
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+
+<script type="text/javascript" language="javascript" src="https://code.highcharts.com/highcharts.js"></script>
+<script type="text/javascript" language="javascript" src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script type="text/javascript" language="javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
+<script type="text/javascript" language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://code.highcharts.com/modules/data.js"></script>
+<script type="text/javascript" language="javascript" src="https://code.highcharts.com/modules/drilldown.js"></script>
+<script type="text/javascript" language="javascript">
+	   $(function () {
+		   // Column Chart
+		   Highcharts.chart('container1', {
+				chart: {
+					type: 'column'
+				},
+				title: {
+					text: 'Monthly Average Rainfall'
+				},
+				subtitle: {
+					text: 'Source: WorldClimate.com'
+				},
+				credits: {
+					enabled: false
+				},
+				xAxis: {
+					categories: [
+						'Jan',
+						'Feb',
+						'Mar',
+						'Apr',
+						'May',
+						'Jun',
+						'Jul',
+						'Aug',
+						'Sep',
+						'Oct',
+						'Nov',
+						'Dec'
+					],
+					crosshair: true
+				},
+				yAxis: {
+					min: 0,
+					title: {
+						text: 'Rainfall (mm)'
+					}
+				},
+				exporting: { 
+					enabled: false 
+				},
+				tooltip: {
+					headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+					pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+						'<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+					footerFormat: '</table>',
+					shared: true,
+					useHTML: true
+				},
+				plotOptions: {
+					column: {
+						pointPadding: 0.2,
+						borderWidth: 0
+					}
+				},
+				series: [{
+					name: 'Tokyo',
+					data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+
+				}, {
+					name: 'New York',
+					data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
+
+				}, {
+					name: 'London',
+					data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+
+				}, {
+					name: 'Berlin',
+					data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+
+				}]
+			}); 
+		   // Column Chart
+		   Highcharts.chart('container2', {
+				chart: {
+					type: 'column'
+				},
+				title: {
+					text: 'Monthly Average Rainfall'
+				},
+				subtitle: {
+					text: 'Source: WorldClimate.com'
+				},
+			    credits: {
+					enabled: false
+				},
+			    exporting: { 
+					enabled: false 
+				},
+				xAxis: {
+					categories: [
+						'Jan',
+						'Feb',
+						'Mar',
+						'Apr',
+						'May',
+						'Jun',
+						'Jul',
+						'Aug',
+						'Sep',
+						'Oct',
+						'Nov',
+						'Dec'
+					],
+					crosshair: true
+				},
+				yAxis: {
+					min: 0,
+					title: {
+						text: 'Rainfall (mm)'
+					}
+				},
+				tooltip: {
+					headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+					pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+						             '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+					footerFormat: '</table>',
+					shared: true,
+					useHTML: true
+				},
+				plotOptions: {
+					column: {
+						pointPadding: 0.2,
+						borderWidth: 0
+					}
+				},
+				series: [{
+					name: 'Tokyo',
+					data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+				}]
+			});
+		   // Column Chart
+		   Highcharts.chart('container3', {
+				chart: {
+					type: 'column'
+				},
+				title: {
+					text: 'Monthly Average Rainfall'
+				},
+				subtitle: {
+					text: 'Source: WorldClimate.com'
+				},
+				credits: {
+					enabled: false
+				},
+			    exporting: { 
+					enabled: false 
+				},
+				xAxis: {
+					categories: [
+						'January'						
+					],
+					crosshair: true
+				},
+				yAxis: {
+					min: 0,
+					title: {
+						text: 'Rainfall (mm)'
+					}
+				},
+				tooltip: {
+					headerFormat: '<span style="font-size:14px; font-weight:bold;">{point.key}</span>',
+					pointFormat: '<br/><span style="color:{series.color};">{series.name}:</span> <b>{point.y}</b>',
+					shared: true,
+					useHTML: true
+				},
+				plotOptions: {
+					column: {
+						pointPadding: 0.2,
+						borderWidth: 0
+					}
+				},
+			    colors: [
+					'#aa0e0d',
+					'#aa690d',
+					'#0d36aa',
+				    '#68b553',
+				    '#0ca0b1',
+				    '#7bd900',
+				],
+				series: [{
+					name: 'Tokyo',
+					data: [49.9]
+
+				}, {
+					name: 'New York',
+					data: [83.6]
+
+				}, {
+					name: 'London',
+					data: [48.9]
+
+				}, {
+					name: 'Berlin',
+					data: [42.4]
+
+				}, {
+					name: 'France',
+					data: [95.4]
+
+				}, {
+					name: 'Canada',
+					data: [60.95]
+
+				}]
+			});
+		   // Stack Column Chart
+		   Highcharts.chart('container4', {
+				chart: {
+					type: 'column'
+				},
+				title: {
+					text: 'Monthly Average Rainfall'
+				},
+				subtitle: {
+					text: 'Source: WorldClimate.com'
+				},
+				credits: {
+					enabled: false
+				},
+			    exporting: { 
+					enabled: false 
+				},
+				xAxis: {
+					categories: [
+						'Jan-Mar','Apr-Jun','Jul-Sep','Oct-Dec'
+					],
+					crosshair: true
+				},
+				yAxis: {
+					min: 0,
+					title: {
+						text: 'Rainfall (mm)'
+					}
+				},
+				tooltip: {
+					headerFormat: '<b>{point.x}</b><br/>',
+					pointFormat: '{series.name}: <b>{point.y}</b><br/><br/>Total: <b>{point.stackTotal}</b>'
+				},
+			   legend: {
+					align: 'center',
+					x: 0,
+					verticalAlign: 'bottom',
+					y: 0,
+					floating: false,
+					backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+					borderColor: '#CCC',
+					borderWidth: 1,
+					shadow: false
+				},
+				plotOptions: {
+				    column: {
+						stacking: 'normal',
+						dataLabels: {
+							enabled: true,
+							color: 'white',
+							style: {
+								textOutline: false
+							}
+						}
+					}
+				},			   
+				series: [{
+					name: 'Tokyo',
+					data: [15, 16, 12, 17]
+
+				}, {
+					name: 'New York',
+					data: [10, 16, 19, 15]
+
+				}, {
+					name: 'London',
+					data: [12, 18, 16, 17]
+
+				}, {
+					name: 'Berlin',
+					data: [11, 13, 15, 19]
+
+				}]
+			});
+		   // Area Chart
+		   Highcharts.chart('container5', {
+					chart: {
+					type: 'area'
+				},
+				title: {
+					text: 'US and USSR nuclear stockpiles'
+				},
+				subtitle: {
+					text: 'Source: <a href="http://thebulletin.metapress.com/content/c4120650912x74k7/fulltext.pdf">' +
+						'thebulletin.metapress.com</a>'
+				},
+				credits:{
+					enabled:false	
+				},
+						   exporting: { 
+								enabled: false 
+							},
+				xAxis: {
+					allowDecimals: false,
+					labels: {
+						formatter: function () {
+							return this.value; // clean, unformatted number for year
+						}
+					}
+				},
+				yAxis: {
+					title: {
+						text: 'Nuclear weapon states'
+					},
+					labels: {
+						formatter: function () {
+							return this.value / 1000 + 'k';
+						}
+					}
+				},
+				tooltip: {
+					pointFormat: '{series.name} produced <b>{point.y:,.0f}</b><br/>warheads in {point.x}'
+				},
+				plotOptions: {
+					area: {
+						pointStart: 1940,
+						marker: {
+							enabled: false,
+							symbol: 'circle',
+							radius: 2,
+							states: {
+								hover: {
+									enabled: true
+								}
+							}
+						}
+					}
+				},
+				series: [{
+					name: 'USA',
+					data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
+						1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
+						27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
+						26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
+						24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
+						22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
+						10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
+				}, {
+					name: 'USSR/Russia',
+					data: [null, null, null, null, null, null, null, null, null, null,
+						5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
+						4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
+						15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
+						33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
+						35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
+						21000, 20000, 19000, 18000, 18000, 17000, 16000]
+				}]								
+             });
+		   // Line Chart
+		   Highcharts.chart('container6', {
+					chart: {
+						type: 'line'
+					},
+					title: {
+						text: 'Monthly Average Temperature'
+					},
+					subtitle: {
+						text: ' '
+					},
+			   		credits:{
+					    enabled:false	
+					},
+			        exporting:{
+					    enabled:false	
+					},
+					xAxis: {
+						categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+					},
+					yAxis: {
+						title: {
+							text: 'Temperature (°C)'
+						}
+					},
+					plotOptions: {
+						line: {
+							dataLabels: {
+								color:'#333333',
+								enabled: true
+							},
+							enableMouseTracking: true
+						}
+					},
+					series: [{
+						color:'#223d90',
+						name: 'Tokyo',
+						data: [7.0, 8.9, 12.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+					}, {
+						color:'#21ab13',
+						name: 'London',
+						data: [1.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 2.8]
+					}, {
+						color:'#f00',
+						name: 'London',
+						data: [2.9, 5.2, 6.7, 9.5, 14.9, 11.2, 10.0, 18.6, 11.2, 15.3, 16.6, 12.8]
+					}]
+				});
+		   // Drilldown Chart
+		   Highcharts.chart('container7', {
+					chart: {
+						type: 'column'
+					},
+					title: {
+						text: 'Browser market shares. January, 2015 to May, 2015'
+					},
+					subtitle: {
+						text: ''
+					},
+			   		credits:{
+					    enabled:false	
+					},
+			   		exporting:{
+					    enabled:false	
+					},
+					xAxis: {
+						type: 'category'
+					},
+					yAxis: {
+						title: {
+							text: 'Total percent market share'
+						}
+					},
+					legend: {
+						enabled: false
+					},
+					plotOptions: {
+						series: {
+							borderWidth: 0,
+							dataLabels: {
+								enabled: true,
+								format: '{point.y:.1f}%'
+							}
+						}
+					},
+					tooltip: {
+						headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+						pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+					},
+
+					series: [{
+						name: 'Brands',
+						colorByPoint: true,
+						data: [{
+							name: 'Microsoft Internet Explorer',
+							y: 56.33,
+							drilldown: 'Microsoft Internet Explorer'
+						}, {
+							name: 'Chrome',
+							y: 24.03,
+							drilldown: 'Chrome'
+						}, {
+							name: 'Firefox',
+							y: 10.38,
+							drilldown: 'Firefox'
+						}, {
+							name: 'Safari',
+							y: 4.77,
+							drilldown: 'Safari'
+						}, {
+							name: 'Opera',
+							y: 0.91,
+							drilldown: 'Opera'
+						}, {
+							name: 'Proprietary or Undetectable',
+							y: 0.2,
+							drilldown: null
+						}]
+					}],
+					drilldown: {
+						series: [{
+							name: 'Microsoft Internet Explorer',
+							id: 'Microsoft Internet Explorer',
+							data: [
+								['v11.0',24.13],
+								['v12.0',17.24],
+								['v13.0',18.11],
+								['v14.0',15.33],
+								['v15.0',11.06],
+								['v16.0',10.50]
+							]
+						}, {
+							name: 'Chrome',
+							id: 'Chrome',
+							data: [
+								['v40.0',5.54],
+								['v41.0',4.32],
+								['v42.0',3.68],
+								['v39.0',2.96],
+								['v36.0',2.53],
+								['v43.0',1.45],
+								['v31.0',1.24],
+								['v35.0',0.85],
+								['v38.0',0.68],
+								['v32.0',0.55],
+								['v37.0',0.38],
+								['v33.0',0.19],
+								['v34.0',0.14],
+								['v30.0',0.14]
+							]
+						}, {
+							name: 'Firefox',
+							id: 'Firefox',
+							data: [
+								['v35',2.76],
+								['v36',2.32],
+								['v37',2.31],
+								['v34',1.27],
+								['v38',1.02],
+								['v31',0.33],
+								['v33',0.22],
+								['v32',0.15]
+							]
+						}, {
+							name: 'Safari',
+							id: 'Safari',
+							data: [
+								['v8.0',2.56],
+								['v7.1',0.77],
+								['v5.1',0.42],
+								['v5.0',0.38],
+								['v6.1',0.29],
+								['v7.0',0.26],
+								['v6.2',0.17]
+							]
+						}, {
+							name: 'Opera',
+							id: 'Opera',
+							data: [
+								['v12',0.34],
+								['v28',0.24],
+								['v27',0.17],
+								['v29',0.16]
+							]
+						}]
+					}
+				});
+		   // Pie Chart
+		   Highcharts.chart('container8', {
+				chart: {
+					type: 'pie',
+					plotBackgroundColor: null,
+					plotBorderWidth: null,
+					plotShadow: false,					
+				},
+				title: {
+					text: 'Browser market shares January, 2015 to May, 2015'
+				},
+				tooltip: {
+					pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+				},
+			   credits:{
+				    enabled:false,  
+			   },
+			   exporting:{
+				    enabled:false,  
+			   },
+				plotOptions: {
+					pie: {
+						allowPointSelect: true,
+						cursor: 'pointer',
+						dataLabels: {
+							enabled: false
+						},
+						showInLegend: true
+					}
+				},
+				series: [{
+					name: 'Brands',
+					colorByPoint: true,
+					data: [{
+						name: 'Microsoft Internet Explorer',
+						y: 56.33
+					}, {
+						name: 'Chrome',
+						y: 24.03,
+/*						sliced: true,
+						selected: true*/
+					}, {
+						name: 'Firefox',
+						y: 10.38
+					}, {
+						name: 'Safari',
+						y: 4.77
+					}, {
+						name: 'Opera',
+						y: 0.91
+					}, {
+						name: 'Proprietary or Undetectable',
+						y: 0.2
+					}]
+				}]
+
+		});
+		   // 3D Pie Chart
+		   Highcharts.chart('container9', {
+				chart: {
+					type: 'pie',
+					options3d: {
+						enabled: true,
+						alpha: 45,
+						beta: 0
+					}
+				},
+				title: {
+					text: 'Browser market shares at a specific website, 2014'
+				},
+				tooltip: {
+					pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+				},
+			    credits:{
+				    enabled:false
+			    },
+			    exporting:{
+				    enabled:false  
+			    },
+				plotOptions: {
+					pie: {
+						allowPointSelect: true,
+						cursor: 'pointer',
+						depth: 35,
+						dataLabels: {
+							enabled: true,
+							//format: '{point.name}',
+							distance:-40,
+							formatter: function() {
+                               return Math.round(this.percentage*100)/100 + ' %';
+							}
+						},
+						
+					}
+				},
+				series: [{
+					type: 'pie',
+					name: 'Browser share',
+					data: [25.0,18.0,15.0,12.0,17.0,13.0]
+				}]
+			});
+	   });
+</script>
+
+
+<!-- Flex gauge-->
+<script type="application/javascript" language="javascript" src="FlexGauge.js"></script>
+<!-- Flex gauge-->
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div id="container1" style="max-width: 600px; height: 400px; margin: 20px auto"></div>
+    
+    <div id="container2" style="max-width: 600px; height: 400px; margin: 20px auto"></div>
+    
+    <div id="container3" style="max-width: 600px; height: 400px; margin: 20px auto"></div>
+    
+    <div id="container4" style="max-width: 600px; height: 400px; margin: 20px auto"></div>
+    
+    <div id="container5" style="max-width: 600px; height: 400px; margin: 20px auto"></div>
+    
+    <div id="container6" style="max-width: 600px; height: 400px; margin: 20px auto"></div>
+    
+    <div id="container7" style="max-width: 600px; height: 400px; margin: 20px auto"></div>
+    
+    <div id="container8" style="max-width: 600px; height: 400px; margin: 20px auto"></div> 
+    
+    <div id="container9" style="max-width: 600px; height: 400px; margin: 20px auto"></div>   
+    
+    <div id="example5" style="max-width: 300px; height: 300px; margin: 20px auto 0">
+          <canvas id="example5_canvas" width="300" height="300"></canvas>    	
+    </div>
+
+    <div id="example6" style="max-width: 300px; height: 300px; margin: 20px auto 0">
+          <canvas id="example6_canvas" width="300" height="300"></canvas>    	
+    </div>
+    
+    <div id="example7" style="max-width: 300px; height: 300px; margin: 20px auto 0">
+          <canvas id="example7_canvas" width="300" height="300"></canvas>    	
+    </div>
+	<script type="application/javascript" language="javascript">
+    	$(document).ready(function(){
+			var gauge = new FlexGauge({
+					appendTo: '#example5',
+					animateEasing: true,
+
+					elementId: 'example5_canvas',
+					elementWidth: 300,
+					elementHeight: 300,
+
+					arcSize: 120,
+					arcFillPercent: .67,
+					arcStrokeFg: 15,
+					arcStrokeBg: 15,
+					animateSpeed: 5,
+
+					arcAngleStart: 1,
+					arcAngleEnd: 3,
+
+					styleArcFg: 'btn-success',
+					styleSrc: 'background-color'
+			});
+
+			var gauge = new FlexGauge({
+					appendTo: '#example6',
+					animateEasing: true,
+
+					elementId: 'example6_canvas',
+					elementWidth: 300,
+					elementHeight: 300,
+
+					arcSize: 120,
+					arcFillPercent: .67,
+					arcStrokeFg: 15,
+					arcStrokeBg: 8,
+					animateSpeed: 5,
+
+					arcAngleStart: 1,
+					arcAngleEnd: 3,
+
+					styleArcFg: 'btn-success',
+					styleSrc: 'background-color'
+			});
+
+
+			var gauge = new FlexGauge({
+					appendTo: '#example7',
+					animateEasing: true,
+
+					elementId: 'example7_canvas',
+					elementWidth: 300,
+					elementHeight: 300,
+
+					arcSize: 120,
+					arcFillPercent: .67,
+					arcStrokeFg: 15,
+					arcStrokeBg: 8,
+					animateSpeed: 5,
+
+					arcAngleStart: 1,
+					arcAngleEnd: 2,
+
+					styleArcFg: 'btn-success',
+					styleSrc: 'background-color'
+			});
+	});							
+</script>
+</body>
+</html>
